@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>YostDev</title>
+    
+        <link rel="icon" href="favico.png" type="image/png">
+        <link rel="stylesheet" href="landing.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body>
+        <div class="top-bar">
+            <img class="logo" src="favico.png">
+        </div>
+
+        <div  class="landing">
+            <h3>Hola me llamo Sergio Fabian</h3>
+            <h1>Creo <b id="cambiante">Paginas web</b></h1>
+            <p>Soy un desarrollador Front-End, actualmente estudiando la carrera de ciencia de datos en la universidad Siglo 21</p>
+        </div>
+        <br>
+        <div class="secciondos">
+            <h3>¿En que te ayudo?</h3>
+            <div class="contenedorT">
+                <div class="tarjetas">
+                   <i class="fa-solid fa-laptop-code"></i>
+                   <h4>Desarrollo Web</h4>
+                   <p>Creo una página simple y facil de usar para que tus seguidores te encuentren siempre</p>
+                   <a href="#contacto">¡Necesito este servicio!</a>
+                </div>
+                <div class="tarjetas">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    <h4>Edicion de videos cortos</h4>
+                    <p>Videos llamativos para tus redes sociales para traer mas alcance</p>
+                    <a href="#contacto">¡Necesito este servicio!</a>
+                </div>
+                <div class="tarjetas">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h4>Diseño de logos y miniaturas</h4>
+                    <p>Diseño simple y personalizado para darle personalidad a tu marca o canal</p>
+                    <a href="#contacto">¡Necesito este servicio!</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="titulo">
+            <h4>Algunos trabajos simples</h4>
+        </div>
+        <div class="secciontres">
+            <div><img src="logotipo1.jpg"></div>
+            <div><img src="panfleto1.jpg"></div>
+            <div><img src="miniatura1.jpg"></div>
+
+            <div><img src="logotipo2.jpg"></div>
+            <div><img src="panfleto2.jpg"></div>
+            <div><img src="miniatura2.jpg"></div>
+
+            <div><img src="logotipo3.jpg"></div>
+            <div><img src="panfleto3.jpg"></div>
+            <div><img src="miniatura3.jpg"></div>
+
+            <div><img src="panfleto4.jpg"></div>
+        </div>
+        <br><br>
+        <div class="seccioncuatro">
+            <img class="yofoto" src="13 sin título_20260325173227.png">
+            <div class="info">
+                <h3>Sobre mi</h3>
+                <p>¡Hola! Soy un desarrollador independiente, actualmente cursando la carrera de Ciencia de Datos. Bajo el alias de yostdev, me dedico a mejorar mis habilidades y ayudar a las personas con lo que necesiten, me enfoco en el minimalismo y la experiencia de usuario sin rollos. Simple, rapido y efectivo.</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="seccionfinal">
+            <h2>¿Hablamos de tu proyecto?</h2>
+            <form id="whatsapp-form">
+                <input type="text" id="nombre" placeholder="Tu nombre">
+                <textarea id="mensajeInput" placeholder="Contame brevemente tu idea..."></textarea>
+                <button onclick="enviarAWhatsApp()">Enviar a WhatsApp</button>
+            </form>
+            <p> 
+                o enviame un email a 
+                <a href="mailto:fabianlopez@gmail.com?subject=Consulta desde el Portafolio&body=Hola Fabian, vi tu portfolio y me gustaría contactarte por...">fabianlopez@gmail.com</a>
+            </p>
+            <br><br>
+        </div>
+        <div id="contacto"></div>
+    </body>
+    <script>
+        const productos = ["logos simples", "miniaturas epicas", "videos cortos", "Paginas web"];
+        const palabra = document.getElementById("cambiante");
+        let indice = 0;
+
+        function cambiarPalabra(){
+            indice++;
+
+            if (indice >= productos.length){
+                indice = 0;
+            };
+
+            palabra.textContent = productos[indice];
+        };
+
+        setInterval(cambiarPalabra,  1500);
+
+        function enviarAWhatsApp() {
+            const numero = "5493758650203"; 
+            const mensaje = document.getElementById("mensajeInput").value;
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    
+            window.open(url, '_blank');
+        }
+    </script>
+</html>
